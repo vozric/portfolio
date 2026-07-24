@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreatorMew - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Video -->
+    <!-- Using a placeholder pattern if video is missing -->
+    <video autoplay loop muted playsinline id="bg-video">
+        <source src="mew.mp4" type="video/mp4">
+    </video>
+
+    <!-- Canvas for Snow -->
+    <canvas id="snow-canvas"></canvas>
+
+    <!-- Volume Control -->
+    <button id="volume-toggle" class="glass-btn icon-btn top-left">
+        <i class="fas fa-volume-mute"></i>
+    </button>
+
+    <!-- Audio Element -->
+    <audio id="bg-music" src="sayonara no natsu.mp3" loop></audio>
+
+    <div class="container">
+        <!-- Main Profile Card -->
+        <div class="card profile-card glass-panel">
+            <div class="avatar-container">
+                <img src="pfp.png" alt="CreatorMew" class="avatar">
+            </div>
+            
+            <h1 class="username">CreatorMew</h1>
+            <p class="subtitle">Makes games</p>
+            
+            <div class="portfolio-info">
+                <p>minimum 5k Robux &middot; negotiable</p>
+                <p>UI/UX systems &middot; custom HUDs &middot; responsive design</p>
+                <p>1+ year UI &middot; fast turnaround</p>
+            </div>
+            
+            <button id="view-works-btn" class="glass-btn primary-btn">
+                View works
+            </button>
+            
+            <div class="social-links">
+                <a href="https://discord.com/users/1355857057873531021" target="_blank" class="social-icon discord"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+
+        <!-- Music Player Card -->
+        <div class="card music-player glass-panel">
+            <div class="music-info">
+                <i class="fas fa-music note-icon"></i>
+                <div class="track-details">
+                    <span class="track-name">sayonara no natsu</span>
+                    <div class="progress-bar-container">
+                        <span class="time current-time">0:00</span>
+                        <div class="progress-bar">
+                            <div class="progress" id="progress"></div>
+                        </div>
+                        <span class="time total-time">5:22</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Discord Let's Work Section -->
+        <div class="card discord-contact glass-panel">
+            <i class="fab fa-discord large-discord-icon"></i>
+            <h2>let's work</h2>
+            <a href="https://discord.com/users/1355857057873531021" target="_blank" class="discord-dm-btn glass-btn">
+                <i class="fab fa-discord"></i>
+            </a>
+            <p class="dm-hint">click the icon to DM me on Discord</p>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal -->
+    <div id="portfolio-modal" class="modal-overlay hidden">
+        <div class="modal-content glass-panel">
+            <button id="close-modal" class="close-btn"><i class="fas fa-times"></i></button>
+            <h2>My Works</h2>
+            <div class="gallery">
+                <div class="gallery-item" style="background-image: url('shopxd.png'); background-color: #2a2a35;">
+                    <span class="gallery-title">Shop UI</span>
+                </div>
+                <div class="gallery-item" style="background-image: url('giftxd.png'); background-color: #2a2a35;">
+                    <span class="gallery-title">Gift Menu UI</span>
+                </div>
+                <div class="gallery-item" style="background-image: url('inventoryxd.png'); background-color: #2a2a35;">
+                    <span class="gallery-title">Inventory UI</span>
+                </div>
+                <div class="gallery-item" style="background-image: url('settingsxd.png'); background-color: #2a2a35;">
+                    <span class="gallery-title">Settings UI</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
