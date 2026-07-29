@@ -17,6 +17,8 @@ body {
     font-family: 'Inter', sans-serif;
     color: var(--text-primary);
     overflow-x: hidden;
+    overflow-y: auto;
+    cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M4,4 L10,24 L14,16 L22,12 Z' fill='black' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E") 4 4, auto;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -24,6 +26,37 @@ body {
     padding: 2rem;
     position: relative;
     background-color: #1a1a2e; /* Fallback */
+}
+
+/* Enter Screen */
+.enter-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.enter-screen h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    animation: pulse 2s infinite alternate;
+}
+.enter-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes pulse {
+    from { opacity: 0.5; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 /* Background Video */
@@ -384,7 +417,7 @@ body {
     background: rgba(255,255,255,0.02);
     border-radius: 16px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-end;
     padding: 1rem;
     color: var(--text-primary);
@@ -402,8 +435,8 @@ body {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
-    opacity: 0.6;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 70%);
+    opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
 }
@@ -411,17 +444,18 @@ body {
 .gallery-title {
     position: relative;
     z-index: 2;
-    font-size: 1.2rem;
-    font-weight: 600;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(8px);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.1);
-    transform: translateY(10px);
-    opacity: 0.8;
-    transition: all 0.3s ease;
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-style: italic;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.9);
+    background: none;
+    padding: 0 0.5rem;
+    border: none;
+    transform: translateY(20px) translateX(-10px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .gallery-item:hover {
@@ -431,13 +465,12 @@ body {
 }
 
 .gallery-item:hover::before {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .gallery-item:hover .gallery-title {
-    transform: translateY(0);
+    transform: translateY(0) translateX(0);
     opacity: 1;
-    background: rgba(0, 0, 0, 0.6);
 }
 
 .gallery-note {
