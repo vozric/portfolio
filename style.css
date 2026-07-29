@@ -491,16 +491,45 @@ body {
 
 /* Responsive */
 @media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
     .container {
         gap: 1rem;
+        margin-top: 2rem;
     }
     .profile-card {
-        padding: 2rem 1.5rem 1.5rem;
+        padding: 2.5rem 1rem 1rem;
     }
     .username {
         font-size: 1.5rem;
     }
+    .portfolio-info {
+        padding: 1rem;
+    }
+    .music-player {
+        padding: 1rem;
+    }
+    .music-info {
+        gap: 0.5rem;
+    }
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem 1rem;
+    }
     .gallery {
         grid-template-columns: 1fr;
+    }
+    .gallery-title {
+        font-size: 1.5rem;
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    .gallery-item::before {
+        opacity: 0.8;
+    }
+    .enter-screen h2 {
+        font-size: 1.2rem;
+        text-align: center;
     }
 }
