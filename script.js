@@ -5,15 +5,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const volumeToggle = document.getElementById('volume-toggle');
     const volumeIcon = volumeToggle.querySelector('i');
     
-    let isMuted = true;
-    bgMusic.volume = 0; 
+    let isMuted = false;
+    bgMusic.volume = 1; 
     bgVideo.muted = true; // Video will always stay muted now
 
     // Auto-play attempt on load
     bgVideo.play().catch(e => console.log("Video autoplay prevented:", e));
 
+    const enterScreen = document.getElementById('enter-screen');
+    
+    enterScreen.addEventListener('click', () => {
+        enterScreen.classList.add('hidden');
+        isMuted = false;
+        volumeIcon.className = 'fas fa-volume-up';
+        bgMusic.play().catch(err => console.log(err));
+    });
+
     // Global Volume Toggle controls play/pause now
-    volumeToggle.addEventListener('click', () => {
+    volumeToggle.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent triggering the body click listener
         isMuted = !isMuted;
         
         if (isMuted) {
@@ -22,9 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             volumeIcon.className = 'fas fa-volume-up';
             bgMusic.volume = 1;
-            
-            // Play music when unmuted
-            bgMusic.play().catch(e => console.log("Audio play prevented:", e));
+            bgMusic.play().catch(err => console.log(err));
         }
     });
 
