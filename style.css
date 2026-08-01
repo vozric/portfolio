@@ -18,45 +18,13 @@ body {
     color: var(--text-primary);
     overflow-x: hidden;
     overflow-y: auto;
-    cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M4,4 L10,24 L14,16 L22,12 Z' fill='black' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E") 4 4, auto;
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 2rem;
     position: relative;
     background-color: #1a1a2e; /* Fallback */
-}
-
-/* Enter Screen */
-.enter-screen {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(10px);
-    z-index: 99999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    cursor: pointer;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-.enter-screen h2 {
-    font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    animation: pulse 2s infinite alternate;
-}
-.enter-screen.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-@keyframes pulse {
-    from { opacity: 0.5; transform: scale(0.98); }
-    to { opacity: 1; transform: scale(1); }
 }
 
 /* Background Video */
@@ -91,50 +59,21 @@ body {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
-.glass-btn {
-    background: var(--glass-bg);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--glass-border);
-    color: var(--text-primary);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.glass-btn:hover {
-    background: var(--glass-highlight);
-    transform: translateY(-2px);
-}
-
 /* Container */
 .container {
     width: 100%;
-    max-width: 480px;
+    max-width: 900px;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
     z-index: 10;
     animation: fadeInUp 0.8s ease forwards;
+    margin-top: 2rem;
 }
 
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-/* Volume Toggle */
-.top-left {
-    position: fixed;
-    top: 1.5rem;
-    left: 1.5rem;
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    z-index: 100;
 }
 
 /* Profile Card */
@@ -184,6 +123,7 @@ body {
     padding: 1.2rem;
     margin-bottom: 1.5rem;
     border: 1px solid rgba(255,255,255,0.05);
+    display: inline-block; /* Keeps it tight around the text */
 }
 
 .portfolio-info p {
@@ -196,25 +136,18 @@ body {
     margin-bottom: 0;
 }
 
-.primary-btn {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    background: rgba(255,255,255,0.1);
-}
-
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
 .social-icon {
     color: var(--text-secondary);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .social-icon:hover {
@@ -222,193 +155,25 @@ body {
     transform: translateY(-3px);
 }
 
-.social-icon.discord:hover {
-    color: var(--accent-color);
-}
+.social-icon.discord:hover { color: #5865F2; }
+.social-icon.email:hover { color: #EA4335; }
+.social-icon.roblox:hover { color: #E3E3E3; }
 
-/* Music Player */
-.music-player {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    gap: 1rem;
-}
 
-.music-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-grow: 1;
-}
-
-.note-icon {
-    font-size: 1.5rem;
-    color: var(--text-secondary);
-}
-
-.track-details {
-    flex-grow: 1;
-}
-
-.track-name {
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 0.4rem;
-}
-
-.progress-bar-container {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.7rem;
-    color: var(--text-secondary);
-}
-
-.progress-bar {
-    flex-grow: 1;
-    height: 4px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 2px;
-    overflow: hidden;
-}
-
-.progress {
-    width: 0%;
-    height: 100%;
-    background: var(--text-primary);
-    transition: width 0.1s linear;
-}
-
-.controls {
-    display: flex;
-    gap: 0.8rem;
-}
-
-.control-btn {
-    background: none;
-    border: none;
-    color: var(--text-primary);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-.control-btn:hover {
-    color: var(--text-secondary);
-}
-
-/* Discord Contact Section */
-.discord-contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2.5rem 2rem;
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.large-discord-icon {
-    font-size: 3rem;
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-}
-
-.discord-contact h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-}
-
-.discord-dm-btn {
-    width: 80px;
-    height: 60px;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    color: var(--text-primary);
-    text-decoration: none;
-    margin-bottom: 1rem;
-    background: rgba(88, 101, 242, 0.2);
-    border-color: rgba(88, 101, 242, 0.4);
-}
-
-.discord-dm-btn:hover {
-    background: rgba(88, 101, 242, 0.4);
-    box-shadow: 0 0 15px rgba(88, 101, 242, 0.5);
-    color: white;
-}
-
-.dm-hint {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
-/* Modal */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.modal-overlay.active {
-    opacity: 1;
-    pointer-events: all;
-}
-
-.modal-content {
-    width: 90%;
-    max-width: 800px;
-    max-height: 90vh;
-    overflow-y: auto;
+/* Showcase Section */
+.showcase-card {
     padding: 2rem;
-    position: relative;
-    transform: scale(0.9);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.modal-overlay.active .modal-content {
-    transform: scale(1);
-}
-
-.close-btn {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    background: none;
-    border: none;
-    color: var(--text-primary);
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: transform 0.2s;
-    z-index: 2;
-}
-
-.close-btn:hover {
-    transform: rotate(90deg);
-}
-
-.modal-content h2 {
+.showcase-card h2 {
     margin-bottom: 1.5rem;
     text-align: center;
+    font-size: 1.5rem;
 }
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 1.5rem;
 }
 
@@ -473,52 +238,41 @@ body {
     opacity: 1;
 }
 
-.gallery-note {
-    text-align: center;
-    margin-top: 1.5rem;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-}
-
 /* Hide scrollbars completely while keeping functionality */
 ::-webkit-scrollbar {
     display: none;
 }
 * {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 /* Responsive */
+@media (max-width: 800px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 600px) {
     body {
         padding: 1rem;
     }
     .container {
         gap: 1rem;
-        margin-top: 2rem;
+        margin-top: 3rem;
     }
     .profile-card {
         padding: 2.5rem 1rem 1rem;
+    }
+    .showcase-card {
+        padding: 1.5rem 1rem;
     }
     .username {
         font-size: 1.5rem;
     }
     .portfolio-info {
         padding: 1rem;
-    }
-    .music-player {
-        padding: 1rem;
-    }
-    .music-info {
-        gap: 0.5rem;
-    }
-    .modal-content {
-        width: 95%;
-        padding: 1.5rem 1rem;
-    }
-    .gallery {
-        grid-template-columns: 1fr;
     }
     .gallery-title {
         font-size: 1.5rem;
@@ -527,9 +281,5 @@ body {
     }
     .gallery-item::before {
         opacity: 0.8;
-    }
-    .enter-screen h2 {
-        font-size: 1.2rem;
-        text-align: center;
     }
 }
