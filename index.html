@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreatorMew - Roblox UI/UX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Premium Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="load-anim">
+        <div class="logo">CreatorMew</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#portfolio">Showcase</a></li>
+            <li><a href="#commissions">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="glitch load-anim delay-1" data-text="CreatorMew">CreatorMew</h1>
+            <h2 class="load-anim delay-2" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;">Roblox UI/UX designer</h2>
+            <p class="load-anim delay-3" style="font-size: 1.2rem; margin-bottom: 40px;">UI Designer with 2 years of experience</p>
+            <div class="load-anim delay-4">
+                <a href="#commissions" class="btn primary-btn">View Commission Info</a>
+                <a href="#portfolio" class="btn secondary-btn">See My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title scroll-anim">My Recent works</h2>
+            <div class="carousel-container scroll-anim delay-1">
+                <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-track">
+                    <img src="showcase 1 (1).jpeg" class="carousel-slide active" alt="Showcase 1">
+                    <img src="showcase 2 (1).jpeg" class="carousel-slide" alt="Showcase 2">
+                    <img src="showcase3 (1).jpeg" class="carousel-slide" alt="Showcase 3">
+                    <img src="showcase 4.jpeg" class="carousel-slide" alt="Showcase 4">
+                    <img src="showcase5.jpeg" class="carousel-slide" alt="Showcase 5">
+                </div>
+                <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commissions Section -->
+    <section id="commissions" class="commissions">
+        <div class="container">
+            <h2 class="section-title scroll-anim">Commission Pricing</h2>
+            <p class="section-subtitle scroll-anim delay-1">Payment accepted in Robux only. No USD.</p>
+            
+            <div class="pricing-cards">
+                <!-- Card 1 -->
+                <div class="card scroll-anim delay-2">
+                    <div class="card-header">
+                        <h3>Frames Only</h3>
+                        <div class="price">
+                            <span class="robux-text" style="margin-right: 10px; font-weight: 800;">R$</span>
+                            2,500+
+                        </div>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check-circle"></i> High-quality individual frames</li>
+                        <li><i class="fas fa-check-circle"></i> Consistent theme & design</li>
+                        <li><i class="fas fa-check-circle"></i> Perfect for specific game menus</li>
+                        <li><i class="fas fa-info-circle"></i> Price increases based on complexity</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 (Premium) -->
+                <div class="card premium-card scroll-anim delay-3">
+                    <div class="badge">Most Popular</div>
+                    <div class="card-header">
+                        <h3>Full UI Projects</h3>
+                        <div class="price">
+                            <span class="robux-text" style="margin-right: 10px; font-weight: 800;">R$</span>
+                            4,500+
+                        </div>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check-circle"></i> Complete Game UI Overhaul</li>
+                        <li><i class="fas fa-check-circle"></i> Menus, HUDs, Shops, Settings</li>
+                        <li><i class="fas fa-check-circle"></i> Cohesive visual language</li>
+                        <li><i class="fas fa-check-circle"></i> Revisions included</li>
+                        <li><i class="fas fa-info-circle"></i> Negotiable based on project scope</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tos scroll-anim delay-4">
+                <h3>Terms of Service</h3>
+                <ul>
+                    <li>Prices listed are starting points; final quotes depend on the size and complexity of the project.</li>
+                    <li>I do not accept USD. Robux via Group Funds or Gamepass (tax covered by you).</li>
+                    <li>A partial upfront payment is required before I start working.</li>
+                    <li>Delivery times vary based on my schedule and the project size.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="scroll-anim">Ready to order?</h2>
+            <p class="scroll-anim delay-1">Send me a message with your project details to get a custom quote.</p>
+            <div class="contact-methods scroll-anim delay-2">
+                <a href="#" class="btn contact-btn"><i class="fab fa-discord"></i> Message on Discord</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Carousel Logic
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentSlide = 0;
+
+        document.querySelector('.next-btn').addEventListener('click', () => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        });
+
+        document.querySelector('.prev-btn').addEventListener('click', () => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        });
+
+        // --- Premium Animations Logic ---
+        
+        // 1. Loader & Hero Animations
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('fade-out');
+                
+                // Start hero animations slightly after loader fades
+                setTimeout(() => {
+                    document.querySelectorAll('.load-anim').forEach(el => {
+                        el.classList.add('show-anim');
+                    });
+                }, 300);
+            }, 800); // 0.8s fake load time to feel premium
+        });
+
+        // 2. Scroll Animations (Intersection Observer)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show-anim');
+                    // Optional: stop observing once animated
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-anim').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
